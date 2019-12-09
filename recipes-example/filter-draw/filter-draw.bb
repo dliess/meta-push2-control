@@ -6,13 +6,13 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 # I want to make sure these get installed too.
 DEPENDS += "qtbase qtdeclarative qtquickcontrols2"
 SRCREV = "${AUTOREV}"
-SRC_URI = "git://github.com/shigmas/BasicQuick.git"
+SRC_URI = "git://github.com/dliess/FilterDraw.git"
 
 S = "${WORKDIR}/git"
 
-require recipes-qt/qt5/qt5.inc
+inherit cmake
 
 do_install() {
       install -d ${D}${bindir}
-      install -m 0755 BasicQuick ${D}${bindir}
+      install -m 0755 FilterDraw ${D}${bindir}
 }
