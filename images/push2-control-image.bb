@@ -10,9 +10,8 @@ QT_PACKAGES = "\
     qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
     qtquickcontrols-qmlplugins \
+    qtquickcontrols2-qmlplugins \
     qtgraphicaleffects \
-    qtdeclarative-qmlplugins \ 
-    qtquickcontrols-qmlplugins \
     "
 MISC_PACKAGES = "\
     libusb1 \
