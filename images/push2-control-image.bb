@@ -1,6 +1,6 @@
 SUMMARY = "Push2Control image"
 
-#include recipes-core/images/core-image-minimal.bb
+inherit populate_sdk populate_sdk_qt5
 include recipes-core/images/core-image-base.bb
 
 QT_PACKAGES = "\
@@ -10,9 +10,16 @@ QT_PACKAGES = "\
     qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
     qtquickcontrols-qmlplugins \
+    qtquickcontrols2 \
     qtquickcontrols2-qmlplugins \
     qtgraphicaleffects \
+    liberation-fonts \
+    qtsvg \
+    qtsvg-plugins \
+    qt3d \
+    qt3d-qmlplugins \
     "
+    
 MISC_PACKAGES = "\
     libusb1 \
     "

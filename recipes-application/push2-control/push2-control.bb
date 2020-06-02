@@ -2,7 +2,19 @@ SUMMARY = "Midi controller Application for Push2"
 SECTION = "Push2 application"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
-DEPENDS += "qttools-native qtbase qtdeclarative qtquickcontrols2 alsa-lib libusb1"
+DEPENDS += "\
+    qttools-native \
+    qtbase \
+    qtdeclarative \
+    qtquickcontrols2 \
+    qtgraphicaleffects \
+    liberation-fonts \
+    qtsvg \
+    qt3d \
+    alsa-lib \
+    libusb1 \
+    "
+
 PV = "0.1+git${SRCPV}"
 
 SRCREV = "${AUTOREV}"
@@ -13,7 +25,8 @@ S = "${WORKDIR}/git"
 inherit cmake
 #OECMAKE_GENERATOR = "Unix Makefiles"
 
-EXTRA_OECMAKE += "-DOE_QMAKE_PATH_EXTERNAL_HOST_BINS=${STAGING_DIR_NATIVE}/${bindir}"
+# workaround for 'zeus', fixed in dunfell
+#EXTRA_OECMAKE += "-DOE_QMAKE_PATH_EXTERNAL_HOST_BINS=${STAGING_DIR_NATIVE}/${bindir}"
 EXTRA_OECMAKE += "-DRTMIDI_BUILD_STATIC_LIBS=ON"
 EXTRA_OECMAKE += "-DRtMidiApi=RtMidi::LINUX_ALSA"
 EXTRA_OECMAKE += "-D__FP_COLOR_REPRESENTATION_EMBEDDED_STYLE__=ON"
