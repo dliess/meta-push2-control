@@ -1,5 +1,7 @@
-# Some hints for conf/local.conf configuration
+# Fill wlan dta in
+# recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
 
+# Some hints for conf/local.conf configuration
 IMAGE_FSTYPES = "tar.gz wic.gz wic.bmap rpi-sdimg"
 
 DISTRO_FEATURES_append = "\
